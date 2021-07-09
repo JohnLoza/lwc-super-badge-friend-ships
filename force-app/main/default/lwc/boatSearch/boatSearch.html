@@ -1,0 +1,14 @@
+<template>
+  <lightning-card title="Find a Boat">
+    <div slot="actions">
+      <lightning-button label="New Boat" onclick={handleNewBoatClick}>
+      </lightning-button>
+    </div>
+
+    <div class="text-center">
+      <lightning-combobox name="progress" class="d-inline-block text-start" placeholder="Select a Boat Type"
+        options={boatTypeComboOptions} onchange={handleBoatTypeChange}>
+      </lightning-combobox>
+    </div>
+  </lightning-card>
+</template>

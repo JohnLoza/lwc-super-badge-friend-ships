@@ -1,17 +1,16 @@
-import { LightningElement } from 'lwc';
-
+import { LightningElement } from "lwc";
 export default class BoatSearch extends LightningElement {
-  boatTypeComboValue = 'all_types';
+  isLoading = false;
 
-  get boatTypeComboOptions() {
-    return [
-      { label: 'All Types', value: 'all_types' },
-      { label: 'Recreational', value: 'recreational' },
-      { label: 'Profesional', value: 'profesional' }
-    ];
-  }
+  // Handles loading event
+  handleLoading() { }
 
-  handleNewBoatClick() { }
+  // Handles done loading event
+  handleDoneLoading() { }
 
-  handleBoatTypeChange(event) { }
+  // Handles search boat event
+  // This custom event comes from the form
+  searchBoats(event) { }
+
+  createNewBoat() { }
 }

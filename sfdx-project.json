@@ -5,7 +5,7 @@
       "default": true
     }
   ],
-  "name": "lwc-super-badge",
+  "name": "friendShips",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "52.0"

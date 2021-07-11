@@ -5,7 +5,7 @@
         <p class="slds-align_absolute-center">There are no related boats by {similarBy}!</p>
       </template>
       <!-- Loop through the list of similar boats -->
-      <template ...>
+      <template if:true={relatedBoats}>
         <!-- Responsive lightning-layout-item -->
         <lightning-layout-item>
           <!-- Each boat tile goes here -->

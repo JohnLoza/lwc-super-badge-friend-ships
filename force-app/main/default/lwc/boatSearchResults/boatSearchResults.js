@@ -1,4 +1,4 @@
-import { LightningElement, wire } from 'lwc';
+import { LightningElement, api, wire } from 'lwc';
 
 import getBoats from '@salesforce/apex/BoatDataService.getBoats';
 import { publish, MessageContext } from 'lightning/messageService';
@@ -29,6 +29,7 @@ export default class BoatSearchResults extends LightningElement {
 
   // public function that updates the existing boatTypeId property
   // uses notifyLoading
+  @api
   searchBoats(boatTypeId) {
     this.isLoading = true
     this.notifyLoading(this.isLoading);
@@ -48,7 +49,8 @@ export default class BoatSearchResults extends LightningElement {
   // Publishes the selected boat Id on the BoatMC.
   sendMessageService(boatId) {
     // explicitly pass boatId to the parameter recordId
-    publish(this.messageContext, BOATMC, boatId);
+    const recordId = { boatId };
+    publish(this.messageContext, BOATMC, recordId);
   }
 
   // The handleSave method must save the changes in the Boat Editor

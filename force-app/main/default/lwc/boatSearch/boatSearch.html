@@ -11,7 +11,7 @@
 
         <p class="slds-var-p-horizontal_small">
           <!-- boatSearchForm component goes here -->
-          <c-boat-search-form onsearch={searchBotes}></c-boat-search-form>
+          <c-boat-search-form onsearch={searchBoats}></c-boat-search-form>
         </p>
       </lightning-card>
     </lightning-layout-item>
@@ -23,9 +23,11 @@
         <lightning-spinner alternative-text="Loading">
         </lightning-spinner>
       </template>
-      <!-- boatSearchResults goes here -->
-      <c-boat-search-results onloading={handleLoading} ondoneloading={handleDoneLoading}>
-      </c-boat-search-results>
+      <template if:false={isLoading}>
+        <!-- boatSearchResults goes here -->
+        <c-boat-search-results onloading={handleLoading} ondoneloading={handleDoneLoading}>
+        </c-boat-search-results>
+      </template>
     </lightning-layout-item>
 
   </lightning-layout>

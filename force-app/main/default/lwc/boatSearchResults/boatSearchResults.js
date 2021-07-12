@@ -23,16 +23,12 @@ export default class BoatSearchResults extends LightningElement {
   @wire(getBoats, { boatTypeId: "$boatTypeId" })
   wiredBoats(result) {
     this.boats = result;
-    this.isLoading = false;
-    this.notifyLoading(this.isLoading);
   }
 
   // public function that updates the existing boatTypeId property
   // uses notifyLoading
   @api
   searchBoats(boatTypeId) {
-    this.isLoading = true
-    this.notifyLoading(this.isLoading);
     this.boatTypeId = boatTypeId;
   }
 

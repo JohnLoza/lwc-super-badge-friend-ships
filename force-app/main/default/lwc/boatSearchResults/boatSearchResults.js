@@ -60,7 +60,7 @@ export default class BoatSearchResults extends LightningElement {
   // Publishes the selected boat Id on the BoatMC.
   sendMessageService(boatId) {
     // explicitly pass boatId to the parameter recordId
-    const recordId = { boatId };
+    const recordId = { recordId: boatId };
     publish(this.messageContext, BOATMC, recordId);
   }
 
